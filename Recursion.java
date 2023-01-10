@@ -44,15 +44,18 @@ public class Recursion{
     public static void printNoDoubleLetterWords(int length,String word,char[]letters){
       if(word.length() < length){
         for(int i = 0; i < letters.length; i++){
-          if(word.length() >= 2){
-            if(letters[i] != word.charAt[i-1]){
-              printNoDoubleLetterWords(length, word + letters[i], letters);  
+          if(word.length() >= 1){
+            if(letters[i] != word.charAt(word.length()-1)){
+              printNoDoubleLetterWords(length, word + letters[i], letters);
             }
           }
           else{
-
+             printNoDoubleLetterWords(length, word + letters[i], letters);
           }
         }
+      }
+      else{
+        System.out.println(word);
       }
     }
 }
